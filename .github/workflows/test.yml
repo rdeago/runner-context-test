@@ -1,0 +1,12 @@
+name: "Test availability of runner context"
+
+on: workflow_dispatch
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      FOOBAR: ${{ runner.debug == '1' && 'foo' || 'bar' }}
+    steps:
+    - name: Show results
+      run: echo $FOOBAR
