@@ -1,0 +1,10 @@
+name: "A workflow that always succeeds"
+
+on: workflow_dispatch
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Do something
+      run: echo Success!
